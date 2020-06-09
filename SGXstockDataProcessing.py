@@ -136,11 +136,11 @@ def compile_corr():
     df = pd.read_csv('sgx_joined_closes.csv')
     df_corr = df.corr()
     df_corr_sum = pd.DataFrame()
-    df_corr_sum['Mean corr'] = (df_corr).sum(axis=0, skipna=True)
-    df_corr_sum['Mean square corr'] = (df_corr**2).sum(axis=0, skipna=True)
+    df_corr_sum['Sum of corr'] = (df_corr).sum(axis=0, skipna=True)
+    df_corr_sum['Sum square of corr'] = (df_corr**2).sum(axis=0, skipna=True)
     
     df_corr.to_csv('sgx_corr.csv')
-    df_corr_sum.to_csv('sgx_corr_means.csv')
+    df_corr_sum.to_csv('sgx_corr_sums.csv')
 
 
 visualize_data()
